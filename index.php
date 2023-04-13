@@ -1,6 +1,5 @@
 <?php 
 require_once 'koneksi.php';
-echo password_hash("ikmal123", PASSWORD_DEFAULT);
 if (isset($_SESSION['id_user'])) {
     header("Location: dashboard.php");
     exit;
@@ -64,9 +63,6 @@ if (isset($_POST['btnLogin'])) {
             </div>
 
             <input type="submit" class="submit" name="btnLogin" value="Sign in">
-            <div class="copyright">
-                <center>Design By : Muhammad Nur ikmalul ilmi</center>
-            </div>
         </form>
     </div>
 </body>

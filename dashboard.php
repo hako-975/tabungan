@@ -14,7 +14,8 @@
 	$total_tabungan = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT *, sum(saldo) as total_tabungan FROM tabungan"));
 
 	$total_penabung = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM tabungan"));
- ?>
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Apr 2023 pada 11.51
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.4.27
+-- Waktu pembuatan: 13 Apr 2023 pada 20.45
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `riwayat_tabungan` (
   `tanggal_transaksi` datetime NOT NULL,
   `jenis_transaksi` enum('SETORAN','TARIKAN') NOT NULL,
   `nominal` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `riwayat_tabungan`
@@ -53,7 +53,7 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `nama_siswa` varchar(50) NOT NULL,
   `kelas_siswa` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `siswa`
@@ -74,7 +74,7 @@ CREATE TABLE `tabungan` (
   `id_siswa` int(11) NOT NULL,
   `saldo` int(11) NOT NULL,
   `tanggal_dibuka` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `tabungan`
@@ -95,14 +95,15 @@ CREATE TABLE `user` (
   `username` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nama_lengkap` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`) VALUES
-(1, 'ikmal123', '$2y$10$OIfWk9/wZZSKm/V13Lvgh.iFIlQhEBSDsBavIQZO8QUbUVmZPqrvC', 'Ikmal');
+(1, 'ikmal123', '$2y$10$OIfWk9/wZZSKm/V13Lvgh.iFIlQhEBSDsBavIQZO8QUbUVmZPqrvC', 'Ikmal'),
+(2, 'admin', '$2y$10$lq/xIahhpKBF7azUWWUXQuv8bTh4qiknned.THWWYwVmSNm9NRyIq', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -160,7 +161,7 @@ ALTER TABLE `tabungan`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

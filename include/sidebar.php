@@ -5,6 +5,7 @@
     <li><a href="tabungan.php">Tabungan</a></li>
     <li><a href="siswa.php">Siswa</a></li>
     <li><a href="user.php">User</a></li>
+    <li><a href="laporan.php">Laporan</a></li>
     <li><a href="logout.php">Logout</a></li>
   </ul>
 </aside>

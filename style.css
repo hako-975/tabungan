@@ -74,6 +74,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .topbar ul {
@@ -130,6 +134,7 @@ body {
 
 main {
   margin-left: 225px; /* top and bottom margin of 50px, left and right margin of 20px */
+  padding: 50px 20px;
 }
 
 .button {

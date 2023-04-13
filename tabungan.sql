@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Apr 2023 pada 20.45
+-- Waktu pembuatan: 13 Apr 2023 pada 21.24
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -41,7 +41,8 @@ CREATE TABLE `riwayat_tabungan` (
 
 INSERT INTO `riwayat_tabungan` (`id_riwayat_tabungan`, `id_tabungan`, `tanggal_transaksi`, `jenis_transaksi`, `nominal`) VALUES
 (2, 1, '2023-04-05 16:39:44', 'SETORAN', 15000),
-(4, 2, '2023-04-05 16:50:04', 'SETORAN', 50000);
+(4, 2, '2023-04-05 16:50:04', 'SETORAN', 50000),
+(5, 1, '2023-04-14 02:13:43', 'TARIKAN', 5000);
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,7 @@ CREATE TABLE `tabungan` (
 --
 
 INSERT INTO `tabungan` (`id_tabungan`, `id_siswa`, `saldo`, `tanggal_dibuka`) VALUES
-(1, 2, 15000, '2023-04-05 16:32:51'),
+(1, 2, 10000, '2023-04-05 16:32:51'),
 (2, 4, 50000, '2023-04-05 16:49:49');
 
 -- --------------------------------------------------------
@@ -143,7 +144,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `riwayat_tabungan`
 --
 ALTER TABLE `riwayat_tabungan`
-  MODIFY `id_riwayat_tabungan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_riwayat_tabungan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`

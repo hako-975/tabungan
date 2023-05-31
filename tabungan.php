@@ -12,6 +12,11 @@
 	$data_user = mysqli_fetch_assoc($user);
 
 	$tabungan = mysqli_query($koneksi, "SELECT * FROM tabungan INNER JOIN siswa ON tabungan.id_siswa = siswa.id_siswa ORDER BY kelas_siswa ASC, nama_siswa ASC");
+
+	if (isset($_POST['btnCari'])) {
+		$cari = $_POST['cari'];
+		$tabungan = mysqli_query($koneksi, "SELECT * FROM tabungan INNER JOIN siswa ON tabungan.id_siswa = siswa.id_siswa WHERE nama_siswa LIKE '%$cari%' OR kelas_siswa LIKE '%$cari%' OR saldo LIKE '%$cari%' OR tanggal_dibuka LIKE '%$cari%' ORDER BY kelas_siswa ASC, nama_siswa ASC");
+	}
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +35,12 @@
 
   <main>
   	<h1>Tabungan</h1>
-  	<a href="tambah_tabungan.php" class="button">+ Tambah Tabungan</a>
+  	<a href="tambah_tabungan.php" class="button">+ Tambah Tabungan</a> 
+	<form method="post" class="form-inline">
+		<input type="text" name="cari" value="<?= isset($_POST['btnCari']) ? $cari : ''; ?>">
+		<button type="submit" name="btnCari" class="button">Cari</button>
+		<a href="tabungan.php" class="button search-a">Reset</a>
+	</form>
   	<hr>
   	<table border="1" cellspacing="0" cellpadding="10">
   		<thead>

@@ -12,6 +12,12 @@
 	$data_user = mysqli_fetch_assoc($user);
 
 	$siswa = mysqli_query($koneksi, "SELECT * FROM siswa ORDER BY kelas_siswa ASC, nama_siswa ASC");
+
+  if (isset($_POST['btnCari'])) {
+    $cari = $_POST['cari'];
+    $siswa = mysqli_query($koneksi, "SELECT * FROM siswa WHERE nama_siswa LIKE '%$cari%' OR kelas_siswa LIKE '%$cari%' ORDER BY kelas_siswa ASC, nama_siswa ASC");
+    
+  }
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +37,11 @@
   <main>
   	<h1>Siswa</h1>
   	<a href="tambah_siswa.php" class="button">+ Tambah Siswa</a>
+    <form method="post" class="form-inline">
+      <input type="text" name="cari" value="<?= isset($_POST['btnCari']) ? $cari : ''; ?>">
+      <button type="submit" name="btnCari" class="button">Cari</button>
+      <a href="siswa.php" class="button search-a">Reset</a>
+    </form>
   	<hr>
   	<table border="1" cellspacing="0" cellpadding="10">
   		<thead>
